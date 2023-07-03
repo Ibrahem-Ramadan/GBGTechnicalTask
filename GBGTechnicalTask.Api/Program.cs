@@ -1,5 +1,7 @@
 using GBGTechnicalTask.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
+using GBGTechnicalTask.Infrastructure;
+using GBGTechnicalTask.Service;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +15,11 @@ builder.Services.AddDbContext<AppDbContext>(optionBuilder =>
 {
     optionBuilder.UseSqlServer(builder.Configuration.GetConnectionString("DBConn"));
 });
+
+builder.Services
+    .AddInfrastructureDependencies()
+    .AddServiceDependencies();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

@@ -19,9 +19,4 @@
     <ProjectReference Include="..\GBGTechnicalTask.Data\GBGTechnicalTask.Data.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="IRepositories\" />
-    <Folder Include="Repositories\" />
-  </ItemGroup>
-
 </Project>
