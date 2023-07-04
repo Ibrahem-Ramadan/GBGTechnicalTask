@@ -1,7 +1,8 @@
-using GBGTechnicalTask.Infrastructure.Data;
-using Microsoft.EntityFrameworkCore;
+using GBGTechnicalTask.Core;
 using GBGTechnicalTask.Infrastructure;
+using GBGTechnicalTask.Infrastructure.Data;
 using GBGTechnicalTask.Service;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,7 +19,8 @@ builder.Services.AddDbContext<AppDbContext>(optionBuilder =>
 
 builder.Services
     .AddInfrastructureDependencies()
-    .AddServiceDependencies();
+    .AddServiceDependencies()
+    .AddCoreDependencies();
 
 var app = builder.Build();
 
