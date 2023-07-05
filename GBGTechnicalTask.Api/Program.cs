@@ -1,4 +1,7 @@
+using GBGTechnicalTask.Core;
+using GBGTechnicalTask.Infrastructure;
 using GBGTechnicalTask.Infrastructure.Data;
+using GBGTechnicalTask.Service;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +16,12 @@ builder.Services.AddDbContext<AppDbContext>(optionBuilder =>
 {
     optionBuilder.UseSqlServer(builder.Configuration.GetConnectionString("DBConn"));
 });
+
+builder.Services
+    .AddInfrastructureDependencies()
+    .AddServiceDependencies()
+    .AddCoreDependencies();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

@@ -14,10 +14,13 @@ namespace GBGTechnicalTask.Infrastructure.Data.Config
         public void Configure(EntityTypeBuilder<Student> builder)
         {
             builder.HasKey(stu => stu.Id);
+
             builder.Property(stu => stu.Id).ValueGeneratedOnAdd();
+
             builder.HasMany(stu => stu.Courses)
                 .WithMany(crs => crs.Students)
                 .UsingEntity<Enrollment>();
+
             builder.Property(stu => stu.Name)
                 .HasColumnType("NVARCHAR")
                 .HasMaxLength(50)

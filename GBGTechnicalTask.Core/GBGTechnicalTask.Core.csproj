@@ -12,4 +12,19 @@
     <ProjectReference Include="..\GBGTechnicalTask.Service\GBGTechnicalTask.Service.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Features\Courses\Commands\Handlers\" />
+    <Folder Include="Features\Courses\Commands\Models\" />
+    <Folder Include="Features\Courses\Commands\Validators\" />
+    <Folder Include="Features\Students\Commands\Validators\" />
+    <Folder Include="Features\Students\Queries\Handlers\" />
+    <Folder Include="Features\Students\Queries\Models\" />
+    <Folder Include="Mapping\Students\QueryMapping\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+    <PackageReference Include="MediatR" Version="12.0.1" />
+  </ItemGroup>
+
 </Project>
