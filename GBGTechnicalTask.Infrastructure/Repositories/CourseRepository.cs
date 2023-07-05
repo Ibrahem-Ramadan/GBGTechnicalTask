@@ -1,20 +1,17 @@
 ﻿using GBGTechnicalTask.Data.Entities;
 using GBGTechnicalTask.Infrastructure.Data;
+using GBGTechnicalTask.Infrastructure.InfrastructureBases;
 using GBGTechnicalTask.Infrastructure.IRepositories;
 using Microsoft.EntityFrameworkCore;
 
 namespace GBGTechnicalTask.Infrastructure.Repositories
 {
-    public class CourseRepository : ICourseRepository
+    public class CourseRepository : GenericRepository<Course>,ICourseRepository
     {
-        private readonly AppDbContext _appDbContext;
-        public CourseRepository(AppDbContext appDbContext)
+        private readonly DbSet<Course> _courses;
+        public CourseRepository(AppDbContext appDbContext):base(appDbContext)
         {
-            _appDbContext = appDbContext;
-        }
-        public async Task<Course> GetByIdAsync(int id)
-        {
-            return await _appDbContext.Courses.FindAsync(id);
+            _courses = appDbContext.Set<Course>();
         }
     }
 }

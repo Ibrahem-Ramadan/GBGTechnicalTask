@@ -1,5 +1,6 @@
 ﻿using GBGTechnicalTask.Data.Entities;
 using GBGTechnicalTask.Infrastructure.Data;
+using GBGTechnicalTask.Infrastructure.InfrastructureBases;
 using GBGTechnicalTask.Infrastructure.IRepositories;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -10,18 +11,12 @@ using System.Threading.Tasks;
 
 namespace GBGTechnicalTask.Infrastructure.Repositories
 {
-    public class StudentRepository : IStudentRepository
+    public class StudentRepository : GenericRepository<Student>, IStudentRepository
     {
-        private readonly AppDbContext _appDbContext;
-        public StudentRepository(AppDbContext appDbContext)
+        private readonly DbSet<Student> _students;
+        public StudentRepository(AppDbContext appDbContext) : base(appDbContext)
         {
-            _appDbContext = appDbContext;
-        }
-        public async Task<Student> AddAsync(Student student)
-        {
-            await _appDbContext.Students.AddAsync(student);
-            await _appDbContext.SaveChangesAsync();
-            return student;
+            _students = appDbContext.Set<Student>();
         }
     }
 }
