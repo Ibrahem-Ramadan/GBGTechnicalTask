@@ -15,6 +15,8 @@ namespace GBGTechnicalTask.Service
         {
             services.AddTransient<IStudentService,StudentService>();
             services.AddTransient<ICourseService,CourseService>();
+            services.AddTransient<IEnrollmentService,EnrollmentService>();
+            services.AddTransient<IDataSeederService,DataSeederService>();
             return services;
         }
     }

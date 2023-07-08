@@ -13,5 +13,9 @@ namespace GBGTechnicalTask.Infrastructure.Repositories
         {
             _courses = appDbContext.Set<Course>();
         }
+        public override async Task<Course> GetByIdAsync(int id)
+        {
+            return await _courses.Include(crs=>crs.Students).FirstOrDefaultAsync(crs => crs.Id == id);
+        }   
     }
 }

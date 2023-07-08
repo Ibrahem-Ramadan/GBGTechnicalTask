@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.33808.371
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GBGTechnicalTask.Api", "GBGTechnicalTask.Api\GBGTechnicalTask.Api.csproj", "{7900A4C5-22CB-4944-A7AD-BAE24AC2DF79}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GBGTechnicalTask.Api", "GBGTechnicalTask.Api\GBGTechnicalTask.Api.csproj", "{7900A4C5-22CB-4944-A7AD-BAE24AC2DF79}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GBGTechnicalTask.Data", "GBGTechnicalTask.Data\GBGTechnicalTask.Data.csproj", "{08D2675A-87F2-4184-A81E-25DEAE166840}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GBGTechnicalTask.Data", "GBGTechnicalTask.Data\GBGTechnicalTask.Data.csproj", "{08D2675A-87F2-4184-A81E-25DEAE166840}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GBGTechnicalTask.Infrastructure", "GBGTechnicalTask.Infrastructure\GBGTechnicalTask.Infrastructure.csproj", "{C883A32E-7035-4C2A-B694-038CEF1F5982}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GBGTechnicalTask.Infrastructure", "GBGTechnicalTask.Infrastructure\GBGTechnicalTask.Infrastructure.csproj", "{C883A32E-7035-4C2A-B694-038CEF1F5982}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GBGTechnicalTask.Service", "GBGTechnicalTask.Service\GBGTechnicalTask.Service.csproj", "{4141FCCF-65E3-49A8-A0B8-30B6A82AC823}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GBGTechnicalTask.Service", "GBGTechnicalTask.Service\GBGTechnicalTask.Service.csproj", "{4141FCCF-65E3-49A8-A0B8-30B6A82AC823}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GBGTechnicalTask.Core", "GBGTechnicalTask.Core\GBGTechnicalTask.Core.csproj", "{3BEE247C-B79B-47FB-9032-1843B751C2DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GBGTechnicalTask.Core", "GBGTechnicalTask.Core\GBGTechnicalTask.Core.csproj", "{3BEE247C-B79B-47FB-9032-1843B751C2DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GBGTechnicalTask.Test", "GBGTechnicalTask.Test\GBGTechnicalTask.Test.csproj", "{B3C0439F-93B8-4CF7-BE15-01A2A61CD283}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{3BEE247C-B79B-47FB-9032-1843B751C2DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3BEE247C-B79B-47FB-9032-1843B751C2DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3BEE247C-B79B-47FB-9032-1843B751C2DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3C0439F-93B8-4CF7-BE15-01A2A61CD283}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3C0439F-93B8-4CF7-BE15-01A2A61CD283}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3C0439F-93B8-4CF7-BE15-01A2A61CD283}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3C0439F-93B8-4CF7-BE15-01A2A61CD283}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

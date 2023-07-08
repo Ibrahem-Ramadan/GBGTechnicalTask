@@ -10,6 +10,7 @@ namespace GBGTechnicalTask.Infrastructure
         {
             services.AddTransient<IStudentRepository,StudentRepository>();
             services.AddTransient<ICourseRepository, CourseRepository>();
+            services.AddTransient<IEnrollmentRepository, EnrollmentRepository>();
             return services;
         }
     }

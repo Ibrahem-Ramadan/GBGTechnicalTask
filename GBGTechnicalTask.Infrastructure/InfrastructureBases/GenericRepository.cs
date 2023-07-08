@@ -1,4 +1,6 @@
 ﻿using GBGTechnicalTask.Infrastructure.Data;
+using Microsoft.EntityFrameworkCore;
+using System.Collections;
 
 namespace GBGTechnicalTask.Infrastructure.InfrastructureBases
 {
@@ -24,7 +26,6 @@ namespace GBGTechnicalTask.Infrastructure.InfrastructureBases
         {
             _dbContext.Set<T>().Update(entity);
             await SaveChangesAsync();
-
         }
         public virtual async Task DeleteAsync(T entity)
         {
@@ -34,6 +35,19 @@ namespace GBGTechnicalTask.Infrastructure.InfrastructureBases
         public async Task<int> SaveChangesAsync()
         {
             return await _dbContext.SaveChangesAsync();
+        }
+        public virtual async Task AddRangeAsync(IEnumerable<T> entities)
+        {
+            await _dbContext.Set<T>().AddRangeAsync(entities);
+            await SaveChangesAsync();
+        }
+        public virtual async Task<IList<T>> GetTableAsTracking()
+        {
+            return await _dbContext.Set<T>().ToListAsync();
+        }
+        public virtual async Task<IList<T>> GetTableAsNoTracking()
+        {
+            return await _dbContext.Set<T>().AsNoTracking().ToListAsync();
         }
     }
 }
