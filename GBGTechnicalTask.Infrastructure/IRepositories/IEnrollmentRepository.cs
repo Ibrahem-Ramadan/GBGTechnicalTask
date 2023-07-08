@@ -3,7 +3,7 @@ using GBGTechnicalTask.Infrastructure.InfrastructureBases;
 
 namespace GBGTechnicalTask.Infrastructure.IRepositories
 {
-    public interface IStudentRepository:IGenericRepository<Student>
+    public interface IEnrollmentRepository : IGenericRepository<Enrollment>
     {
     }
 }
