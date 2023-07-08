@@ -9,6 +9,7 @@ namespace GBGTechnicalTask.Core.Mapping.Students
         public StudentProfile()
         {
             AddStudentMapping();
+            GetStudentMapping();
         }
     }
 }
