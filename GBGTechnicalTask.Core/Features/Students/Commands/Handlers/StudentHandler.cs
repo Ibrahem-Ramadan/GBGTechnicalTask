@@ -1,12 +1,16 @@
 ﻿using AutoMapper;
+using GBGTechnicalTask.Core.Bases.Response;
 using GBGTechnicalTask.Core.Features.Students.Commands.Models;
+using GBGTechnicalTask.Core.Features.Students.Commands.Responses;
 using GBGTechnicalTask.Data.Entities;
 using GBGTechnicalTask.Service.IServices;
 using MediatR;
 
 namespace GBGTechnicalTask.Core.Features.Students.Commands.Handlers
 {
-    public class StudentHandler : IRequestHandler<AddStudentCommand, Student>
+    public class StudentHandler : 
+        ResponseHandler,
+        IRequestHandler<AddStudentCommand, Response<AddStudentResponse>>
     {
         private readonly IStudentService _studentService;
         private readonly IMapper _mapper;
@@ -18,10 +22,12 @@ namespace GBGTechnicalTask.Core.Features.Students.Commands.Handlers
             _studentService = studentService;
             _mapper = mapper;
         }
-        public Task<Student> Handle(AddStudentCommand request, CancellationToken cancellationToken)
+        public async Task<Response<AddStudentResponse>> Handle(AddStudentCommand request, CancellationToken cancellationToken)
         {
-            var studentMapped= _mapper.Map<Student>(request);
-            return _studentService.AddStudentAsync(studentMapped);
+            var addStudentCommandMapped= _mapper.Map<AddStudentCommand,Student>(request);
+            var studentEntity= await _studentService.AddStudentAsync(addStudentCommandMapped);
+            var addStudentResponseMapped = _mapper.Map<Student, AddStudentResponse>(studentEntity);
+            return Created(addStudentResponseMapped);
         }
     }
 }
