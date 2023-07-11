@@ -1,0 +1,343 @@
+html,
+body {
+  height: 100%;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url(./assets/fonts/Montserrat-VariableFont_wght.ttf);
+  font-weight: 400 800;
+}
+
+@import "@angular/material/theming";
+$custom-typography: mat-typography-config(
+  $font-family: '"Montserrat", "Helvetica Neue", sans-serif',
+);
+
+.mat-icon-button i,
+.mat-icon-button .mat-icon {
+  font-family: "Material Icons" !important;
+}
+@include mat-core($custom-typography);
+
+.mat-icon.mat-icon.notranslate{
+  margin: 0 5px;
+}
+body {
+  margin: 0;
+  font-family: "Montserrat", "Helvetica Neue", sans-serif;
+}
+
+.primary-color {
+  color: var(--primary-color);
+}
+.second-color {
+  color: var(--second-color);
+}
+.accent-color {
+  color: var(--accent-color) !important;
+}
+
+.bold,
+.page-title {
+  font-weight: bold !important;
+}
+.non-bold-head {
+  font-weight: initial;
+}
+.details-text {
+  span {
+    margin-left: 5px;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-small {
+  font-size: 12px;
+}
+.very-large-text {
+  font-size: 3em;
+  margin: 0;
+}
+.primary-color-bg {
+  background-color: var(--primary-color);
+  color: var(--light-color);
+}
+
+.second-color-bg {
+  background-color: var(--second-color);
+  color: var(--light-color);
+}
+.mat-radio-button {
+  margin-right: 5px;
+}
+
+.loading-shade {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  right: 0;
+  background: rgba(0, 0, 0, 0.15);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.AC-icon {
+  &::before {
+    content: "~";
+    margin: 0 3px;
+    padding: 0 5px;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    background-color: var(--accent-color);
+    border-radius: 5px;
+  }
+}
+
+.ngx-mat-timepicker{
+  direction: ltr;
+  .mat-icon.mat-icon.notranslate{
+    margin: 0 ;
+  }
+}
+.status{
+  &.In-Progress{
+    color: var(--blue-color);
+  }
+  &.Failed{
+    color: var(--accent-color);
+  }
+  &.End{
+    color: var(--success-color);
+  }
+}
+
+.Active-color {
+  color: var(--success-color);
+}
+.Inactive-color {
+  color: var(--accent-color);
+}
+
+.DC-icon {
+  &::before {
+    content: "-";
+    margin: 0 3px;
+    padding: 0 5px;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+  }
+}
+
+
+.MIXED-icon {
+  &::before {
+    content: "≃";
+    margin: 0 3px;
+    padding: 0 5px;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    background-color: rgb(18, 150, 211);
+    border-radius: 5px;
+  }
+}
+
+.mat-dialog-content {
+  padding: 10px !important;
+  form {
+    padding: 10px;
+  }
+}
+
+.mat-dialog-actions {
+  margin-top: 20px;
+}
+
+.filters-card {
+  form {
+    mat-form-field {
+      margin: 10px;
+    }
+  }
+}
+.page-content {
+  padding: 20px;
+
+  .rate-limit-reached {
+    max-width: 360px;
+    text-align: center;
+  }
+
+  /* Column Widths */
+  .mat-column-number,
+  .mat-column-state {
+    max-width: 64px;
+  }
+
+  .mat-column-created {
+    max-width: 124px;
+  }
+
+  mat-card {
+    margin-bottom: 15px;
+    border-radius: 20px;
+    .mat-card-content {
+      margin-bottom: 0;
+    }
+    .mat-card-actions {
+      padding: 0;
+    }
+  }
+  .table-container {
+    position: relative;
+    border-radius: 20px;
+    overflow-x: auto;
+    background-color: #fff;
+    padding-top: 20px;
+    .table-top-actions {
+      padding: 20px;
+    }
+    .table-wrapper {
+      position: relative;
+      margin-top: 10px;
+      border-top: 1px solid #ddd;
+      .add-button {
+        float: right;
+      }
+      table {
+        width: 100%;
+        // min-height: 200px;
+
+        .mat-cell,
+        .mat-header-cell {
+          word-wrap: initial;
+          display: table-cell;
+          // padding: 0px 5px;
+          padding-right: 10px;
+          line-break: unset;
+          width: auto;
+          white-space: nowrap;
+          overflow: hidden;
+          vertical-align: middle;
+        }
+        tbody {
+          // min-height: 400px;
+          // max-height: 400px;
+          overflow: auto;
+        }
+      }
+    }
+  }
+}
+
+.filter-wrapper {
+  .mat-form-field {
+    font-size: 12px;
+  }
+}
+
+.table-wrapper{
+  th{
+    font-weight: 600;
+    color: #000;
+  }
+}
+.primary-button {
+  background-color: var(--primary-color);
+  color: var(--extra-light-color);
+  border-radius: 20px !important;
+  min-width: 120px !important;
+  letter-spacing: 1px;
+  height: 40px;
+  &:hover {
+    background-color: var(--second-color);
+  }
+}
+
+.accent-button {
+  background-color: var(--accent-color);
+  color: var(--extra-light-color);
+  border-radius: 20px !important;
+  min-width: 120px !important;
+  letter-spacing: 1px;
+  height: 40px;
+  &:hover {
+    background-color: var(--second-accent-color);
+  }
+}
+
+.mat-row:hover .mat-cell {
+  background-color: var(--hover-light-color);
+}
+
+.pointer:hover{
+  cursor: pointer;
+}
+
+.mat-dialog-container {
+  border-radius: 20px !important;
+  .dialog-container {
+    padding: 15px;
+
+    .mat-dialog-title {
+      .mat-icon {
+        line-height: 28px;
+      }
+    }
+    button {
+      // min-width: 120px !important;
+      border-radius: 15px;
+    }
+  }
+}
+
+.mat-menu-panel{
+
+  .mat-menu-content{
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+}
+// Fix Date time picker known issue
+button.mat-calendar-body-cell {
+  position: absolute;
+  height: 100%;
+  }
+
+  td.mat-calendar-body-cell {
+  position: relative;
+  height: 0;
+  }
+
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--light-color);
+  box-shadow: inset 0 0 2px grey;
+  border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--second-color);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-color);
+}

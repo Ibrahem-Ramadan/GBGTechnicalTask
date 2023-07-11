@@ -1,0 +1,86 @@
+<div class="dialog-container">
+  <div class="loading-shade" *ngIf="submitting">
+    <mat-spinner *ngIf="submitting"></mat-spinner>
+  </div>
+
+  <h3 mat-dialog-title>
+    <mat-icon color="accent">perm_contact_calendar</mat-icon>
+    Student Enrollment
+  </h3>
+
+  <div mat-dialog-content>
+    <div fxFlex>
+      <form
+        name="enrollStudentForm"
+        autocomplete="off"
+        [formGroup]="enrollStudentForm"
+        fxLayout="column  "
+        fxLayoutAlign="start stretch"
+        fxFlex="100"
+      >
+      <mat-form-field appearance="outline" fxFlex>
+        <mat-label >Student</mat-label>
+        <mat-select formControlName="studentId">
+          <mat-option value="">
+            <span>None</span>
+          </mat-option>
+          <mat-option *ngFor="let student of studentsList" [value]="student.id" >
+            <span>{{student.id}}. {{student.name}}</span>
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="enrollStudentForm.get('courseId')?.invalid">
+          <input-error class="mat-error" [input]="enrollStudentForm.get('courseId')">
+          </input-error>
+        </mat-error>
+      </mat-form-field>
+
+      </form>
+    </div>
+    <div fxFlex>
+      <form
+        name="enrollStudentForm"
+        autocomplete="off"
+        [formGroup]="enrollStudentForm"
+        fxLayout="column  "
+        fxLayoutAlign="start stretch"
+        fxFlex="100"
+      >
+      <mat-form-field appearance="outline" fxFlex>
+        <mat-label translate="COURSE"></mat-label>
+        <mat-select formControlName="courseId">
+          <mat-option value="">
+            <span>None</span>
+          </mat-option>
+          <mat-option *ngFor="let course of coursesList" [value]="course.id" >
+            <span>{{course.id}}. {{course.name}}</span>
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="enrollStudentForm.get('courseId')?.invalid">
+          <input-error class="mat-error" [input]="enrollStudentForm.get('courseId')">
+          </input-error>
+        </mat-error>
+      </mat-form-field>
+
+      </form>
+    </div>
+  </div>
+  <div mat-dialog-actions>
+    <button
+      mat-raised-button
+      class="accent-button"
+      tabindex="-1"
+      [mat-dialog-close]=""
+    >
+      Cancel
+    </button>
+    <span fxFlex="1 1 auto"></span>
+    <button
+      mat-raised-button
+      (click)="enroll()"
+      class="primary-button"
+      tabindex="-1"
+    >
+      Enroll
+    </button>
+  </div>
+</div>

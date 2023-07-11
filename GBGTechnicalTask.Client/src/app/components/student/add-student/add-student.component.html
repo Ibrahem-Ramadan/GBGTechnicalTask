@@ -1,0 +1,49 @@
+<div class="dialog-container">
+  <div class="loading-shade" *ngIf="submitting">
+    <mat-spinner *ngIf="submitting"></mat-spinner>
+  </div>
+
+  <h3 mat-dialog-title>
+    <mat-icon color="accent">perm_contact_calendar</mat-icon>
+    Add New Student
+  </h3>
+
+  <div mat-dialog-content>
+    <form
+      name="loginForm"
+      autocomplete="off"
+      [formGroup]="addStudentForm"
+      fxLayout="column  "
+      fxLayoutAlign="start stretch"
+      fxFlex="100"
+    >
+      <mat-form-field appearance="outline" fxFlex>
+        <mat-label>Name</mat-label>
+        <input matInput type="text" formControlName="studentName" />
+        <mat-error *ngIf="addStudentForm.get('studentName')?.invalid">
+          <input-error class="mat-error" [input]="addStudentForm.get('studentName')">
+          </input-error>
+        </mat-error>
+      </mat-form-field>
+    </form>
+  </div>
+  <div mat-dialog-actions>
+    <button
+      mat-raised-button
+      class="accent-button"
+      tabindex="-1"
+      [mat-dialog-close]=""
+    >
+      Cancel
+    </button>
+    <span fxFlex="1 1 auto"></span>
+    <button
+      mat-raised-button
+      (click)="submit()"
+      class="primary-button"
+      tabindex="-1"
+    >
+      Submit
+    </button>
+  </div>
+</div>
