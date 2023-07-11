@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GBGTechnicalTask.Service", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GBGTechnicalTask.Core", "GBGTechnicalTask.Core\GBGTechnicalTask.Core.csproj", "{3BEE247C-B79B-47FB-9032-1843B751C2DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GBGTechnicalTask.Test", "GBGTechnicalTask.Test\GBGTechnicalTask.Test.csproj", "{B3C0439F-93B8-4CF7-BE15-01A2A61CD283}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GBGTechnicalTask.Test", "GBGTechnicalTask.Test\GBGTechnicalTask.Test.csproj", "{B3C0439F-93B8-4CF7-BE15-01A2A61CD283}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

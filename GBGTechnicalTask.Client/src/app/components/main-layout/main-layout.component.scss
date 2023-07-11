@@ -1,0 +1,303 @@
+.main-layout-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+
+.logo{
+  // background-image: url("../../../assets/images/learning.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 80px;
+  width:  120px;
+  margin-left: 10px;
+
+  &.second{
+    width: 80px;
+    height: 60px;
+  }
+}
+.selected-name {
+  font-size: 14px;
+}
+
+.app-button {
+  height: 35px;
+  width: 35px;
+  line-height: 35px;
+}
+ .mat-icon.app-icon{
+  font-size: 20px;
+
+}
+
+img#logo {
+  width: 150px;
+  display: block;
+  padding: 0 5px;
+  margin: 0 auto 25px auto;
+
+}
+
+
+.main-toolbar {
+    margin-bottom: 4px;
+    height: 80px;
+    background-color: #fafafa;
+    color: var(--second-color);
+    z-index: 2;
+}
+
+.mat-sidenav{
+  min-width: 260px;
+  background-color: var(--primary-color);
+  border-top-right-radius: 80px;
+  padding-top: 80px;
+  .mat-icon {
+    margin-right: 10px;
+  }
+  &.AR{
+    border-top-right-radius: 0;
+    border-top-left-radius: 80px;
+
+    .mat-icon{
+      margin-right: 0px;
+      margin-left: 10px;
+
+    }
+
+    .mat-list-base .mat-list-item, .mat-list-base .mat-list-item,
+  .mat-expansion-panel-header ,
+  .mat-expansion-panel-header *{
+    &:hover, &.active {
+      &::after{
+        right: 0;
+        left: auto;
+
+      }
+    }
+  }
+
+  }
+  .mat-expansion-panel-spacing{
+    margin: 0;
+  }
+  .mat-expansion-panel-header{
+    padding: 0 16px !important;
+    height: 60px  !important;
+  }
+  .mat-list-base .mat-list-item, .mat-list-base .mat-list-option{
+    height: 60px;
+    font-size: 14px;
+  }
+  .mat-list-base .mat-list-item, .mat-list-base .mat-list-item,
+  .mat-expansion-panel-header ,
+  .mat-expansion-panel-header *
+  {
+    color: var(--light-color);
+    &:hover, &.active {
+      &::after{
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 5px;
+        background-color: var(--accent-color);
+        z-index: 1;
+      }
+      color: var(--extra-light-color);
+      // border-left: 5px solid var(--second-color) ;
+      // background-color: var(--second-color);
+      .mat-icon{
+        color: var(--accent-color);
+      }
+    }
+
+  }
+  .mat-expansion-indicator::after{
+    color: var(--light-color);
+  }
+  .mat-expansion-panel{
+    background-color: transparent;
+    box-shadow: none;
+    .mat-expansion-panel-body{
+        padding: 0;
+        .mat-list-item{
+          padding-left: 10px;
+        }
+    }
+  }
+}
+
+// .mat-sidenav-content{
+//   // background-color:  var(--light-color);
+// }
+.is-mobile .toolbar {
+  position: fixed;
+  /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+  z-index: 2;
+}
+
+h1.app-name {
+  margin-left: 8px;
+}
+
+.sidenav-container {
+  /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+     causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
+  flex: 1;
+}
+
+.is-mobile .sidenav-container {
+  /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
+     `<body>` to be our scrolling element for mobile layouts. */
+  flex: 1 0 auto;
+}
+
+
+
+#loader {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: table;
+    background: #fff;
+    top: 0;
+    z-index: 5000;
+}
+
+.box {
+
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 30px;
+    position: relative;
+    vertical-align: middle;
+    -webkit-transition: .3s color, .3s border, .3s transform, .3s opacity;
+    transition: .3s color, .3s border, .3s transform, .3s opacity;
+    display: table-cell;
+}
+
+#loader p {
+    position: absolute;
+    transform: rotate(-45deg);
+    bottom: 33%;
+    left: 30%;
+    color: #000;
+    font-weight: 700;
+
+}
+#loader p .text-muted {
+  color: #30a5ff !important;
+  font-size: 55px;
+
+}
+
+
+.loader-16 {
+    -webkit-transform: rotateZ(45deg);
+    transform: rotateZ(45deg);
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
+    border-radius: 50%;
+}
+
+[class*="loader-"] {
+    display: inline-block;
+    width: 10em;
+    height: 10em;
+    color: inherit;
+    vertical-align: middle;
+    pointer-events: none;
+}
+.loader-16:before, .loader-16:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: inherit;
+  height: inherit;
+  border-radius: 50%;
+  -webkit-animation: 1s spin linear infinite;
+          animation: 1s spin linear infinite;
+}
+.loader-16:before {
+  -webkit-transform: rotateX(70deg);
+          transform: rotateX(70deg);
+  color: #30a5ff;
+
+}
+.loader-16:after {
+  -webkit-transform: rotateY(70deg);
+          transform: rotateY(70deg);
+  -webkit-animation-delay: .4s;
+          animation-delay: .4s;
+}
+
+.footer{
+  font-size: 12px;
+  padding: 5px;
+}
+@-webkit-keyframes spin {
+  0%,
+    100% {
+    box-shadow: .2em 0px 0 0px currentcolor;
+  }
+  12% {
+    box-shadow: .2em .2em 0 0 currentcolor;
+  }
+  25% {
+    box-shadow: 0 .2em 0 0px currentcolor;
+  }
+  37% {
+    box-shadow: -.2em .2em 0 0 currentcolor;
+  }
+  50% {
+    box-shadow: -.2em 0 0 0 currentcolor;
+  }
+  62% {
+    box-shadow: -.2em -.2em 0 0 currentcolor;
+  }
+  75% {
+    box-shadow: 0px -.2em 0 0 currentcolor;
+  }
+  87% {
+    box-shadow: .2em -.2em 0 0 currentcolor;
+  }
+}
+@keyframes spin {
+  0%,
+    100% {
+    box-shadow: .5em 0px 0 0px currentcolor;
+  }
+  12% {
+    box-shadow: .5em .5em 0 0 currentcolor;
+  }
+  25% {
+    box-shadow: 0 .5em 0 0px currentcolor;
+  }
+  37% {
+    box-shadow: -.5em .5em 0 0 currentcolor;
+  }
+  50% {
+    box-shadow: -.5em 0 0 0 currentcolor;
+  }
+  62% {
+    box-shadow: -.5em -.5em 0 0 currentcolor;
+  }
+  75% {
+    box-shadow: 0px -.5em 0 0 currentcolor;
+  }
+  87% {
+    box-shadow: .5em -.5em 0 0 currentcolor;
+  }
+}

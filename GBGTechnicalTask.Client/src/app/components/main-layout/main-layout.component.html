@@ -1,0 +1,94 @@
+
+<div
+  [dir]="getDir()"
+  class="main-layout-container"
+  [class.is-mobile]="mobileQuery.matches"
+  *ngIf="isLoaded"
+>
+  <mat-toolbar
+    class="main-toolbar toolbar"
+    fxLayout="row"
+    fxLayoutAlign="space-between center"
+  >
+    <div fxLayout="row" fxLayoutAlign="space-between center">
+      <button mat-icon-button (click)="snav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <div class="logo"></div>
+    </div>
+    <div>
+      <h1 class="page-title" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="5px">
+        <mat-icon class="accent-color" >{{routeData?.['icon']}}</mat-icon> <span > {{translationService.translateText(routeData?.['title'])}}</span></h1>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="space-between center">
+      <span class="fill-remaining-space"></span>
+
+
+      <button mat-button [matMenuTriggerFor]="menu">{{((selectedLang === 'AR') ? 'ع' : 'EN')}}</button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="changeLang('AR')">ع</button>
+        <button mat-menu-item  (click)="changeLang('EN')">EN</button>
+      </mat-menu>
+
+      <button
+        mat-icon-button
+        matTooltip="Notifications"
+        class="notifications-popup"
+      >
+        <mat-icon [matBadge]="notifications.length" [matBadgeHidden]="notifications.length == 0" matBadgeColor="warn">notifications_active</mat-icon>
+      </button>
+
+      <button
+        mat-icon-button
+        matTooltip="Change Password"
+        (click)="changePassword()"
+      >
+        <mat-icon>lock</mat-icon>
+      </button>
+      <span class="text-small">
+        {{ userSessionData.given_name }} {{ userSessionData.family_name }}</span
+      >
+      <button mat-icon-button matTooltip="Logout" (click)="logout()">
+        <mat-icon>power_settings_new</mat-icon>
+      </button>
+    </div>
+  </mat-toolbar>
+  <mat-sidenav-container
+    class="sidenav-container"
+    [style.marginTop.px]="mobileQuery.matches ? 56 : -4"
+  >
+    <mat-sidenav
+      #snav
+      [mode]="mobileQuery.matches ? 'over' : 'side'"
+      opened="true"
+      class="{{selectedLang}}"
+      [fixedInViewport]="mobileQuery.matches"
+      fixedTopGap="56"
+    >
+      <mat-nav-list>
+        <mat-accordion class="sidenav-accordoin">
+
+          <a mat-list-item routerLink="/main" routerLinkActive="active">
+            <mat-icon>school</mat-icon> <span translate="STUDENTS" ></span>
+          </a>
+          <mat-divider></mat-divider>
+
+          <a mat-list-item routerLink="/courses" routerLinkActive="active">
+            <mat-icon>library_books</mat-icon> <span translate="COURSES" ></span>
+          </a>
+          <mat-divider></mat-divider>
+
+        </mat-accordion>
+
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+  <div class="second-color-bg  footer " fxLayout="row" fxLayoutAlign="start center">
+    <mat-icon class="accent-color" >copyright</mat-icon> <span >Ibrahim Ramadan</span>
+  </div>
+</div>
